@@ -7,10 +7,10 @@
     overflow-x: hidden;
 }
 .head{
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     text-align: center;
-    color: var(--green);
+    color: var(--light-green);
     font-size: 50px;
 }
 
@@ -129,8 +129,12 @@
 
 .ii{
     width: 130px;
+    height: 130px;
+    object-fit: contain;
     border-radius: 4px;
     padding: 25px 10px;
+    background-color: var(--green);
+    border: 2px solid var(--light-green);
 }
 
 

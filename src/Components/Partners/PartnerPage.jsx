@@ -1,17 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import classes from './Partner.module.css'
 import imga from '../../Assets/raptor1.png'
 import p1 from '../../Assets/Partnership.png'
 import p2 from '../../Assets/donate.png'
 import p3 from '../../Assets/brochure.png'
-import MyInfo from './PertnerInfo'
 import { Link, useNavigate } from 'react-router-dom'
+import { GetAllSponsors } from '../getdata/GetAllSponsors'
 
 const PartnerPage = () => {
+    const [data, setData] = useState(null)
     const navigate = useNavigate();
     const goto = () => {
         navigate("/partners/criteria")
     }
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const Data = await GetAllSponsors();
+                setData(Data[0].all)
+    
+            } catch (error) {
+                console.log("error occured while fetching data",error);
+                
+            }
+        }
+        fetchData();
+    }, []);
+
   return (
     <div className={classes.main}>
         <div className={classes.top}>
@@ -47,8 +63,9 @@ const PartnerPage = () => {
             <h1 className={classes.head}>Our Partners</h1>
             <div className={classes.imp}>
                 {
-                    MyInfo.map((item, index) => {
-                        return <Link to={`../partners/${item.link}`} className={classes.abs} style={{border:`3px solid ${item.color} `}} ><img src={item.ima} alt='' className={classes.ii}/></Link>
+                    (data === null)?<></>
+                    :data.map((item, index) => {
+                        return <Link to={`${item.link}`} className={classes.abs} style={{border:`3px solid ${item.color} `}} ><img src={item.logo} alt='' className={classes.ii}/></Link>
                     })
                 }
             </div>
