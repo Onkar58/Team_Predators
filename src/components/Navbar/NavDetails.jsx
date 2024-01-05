@@ -15,6 +15,10 @@ let details = [
         name: "Partners",
         route: "/partners"
     },
+    {
+        name: "Gallery",
+        route: "/gallery"
+    },
 ]
 
 export default details

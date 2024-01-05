@@ -50,7 +50,7 @@ useEffect(() => {
   (window.innerWidth < 850)?(window.innerWidth < 450)?setScale(0.35)
   :setScale(0.6)
   :setScale(1)
-},[window.innerWidth])
+},[])
 
 
   const HandleClick = (e) => {

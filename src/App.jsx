@@ -4,14 +4,14 @@ import {
   Contact,
   Partners,
   Achievements,
-  IndividualP
+  IndividualP,
+  Teams,
+  Moments,
+  GalleryPage
 } from './pages'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer/Footer'
-import Moments from './pages/Moments'
-import Teams from './pages/Teams'
-import Gallery from './Components/common/Gallery/Gallery'
 import PartnerCrit from './Components/Partners/PartnerCrit'
 
 const App = () => {
@@ -26,8 +26,7 @@ const App = () => {
         <Route path='/teams' element={<Teams/>} />
         <Route path='/partners/:id' element={<IndividualP/>} />
         <Route path='/partners/criteria' element={<PartnerCrit/>} />
-        <Route path='/moments' element={<Moments/>} />
-        <Route path='/gallery' element={<Gallery/>} />
+        <Route path='/gallery' element={<GalleryPage/>} />
       </Routes>
       <Footer />
     </>

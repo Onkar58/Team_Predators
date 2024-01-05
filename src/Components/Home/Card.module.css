@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
 }
@@ -30,7 +30,7 @@
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     transition-timing-function: ease-in-out;
     height: 350px;
     border-radius: 4px;
@@ -64,7 +64,7 @@
     padding: 0px;
     display: flex;
     margin-top: 0px;
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     transition-timing-function: ease-in-out;
     width: 100%;
     z-index: 1;
@@ -79,14 +79,14 @@
     border: 2px solid var(--accent-color);
     display: none;
     animation-name: slidebotA;
-    animation-duration: 0.3s;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
 }
 
 .perm:hover .img{
     animation-name: slidebot;
     display: flex;
-    animation-duration: 0.3s;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
     
 }
@@ -95,12 +95,12 @@
     position: absolute;
     margin-top: -200px;
     margin-left: -120px;
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     transition-timing-function: ease-in-out;
 }
 
 .perm:hover .p{
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     background-color: var(--accent-color);
     transition-timing-function: ease-in-out;
     padding: 20px;
@@ -163,7 +163,7 @@
 .perm:hover .img1{
     animation-name: slidebot;
     display: flex;
-    animation-duration: 0.3s;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
     
 }
@@ -172,14 +172,14 @@
     position: absolute;
     margin-top: -200px;
     margin-right: -90px;
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     text-align: center;
     animation-timing-function: ease-in-out;
     width: 120px;
 }
 
 .perm:hover .p1{
-    transition-duration: 0.5s;
+    transition-duration: 5s;
     background-color: var(--accent-color);
     transition-timing-function: ease-in-out;
     padding: 20px;
@@ -282,4 +282,148 @@
         margin-top: -200px;
     }
 }
+ */
 
+
+.body {
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    overflow: hidden;
+    margin-bottom: 100px;
+    row-gap: 100px;
+    overflow: visible;
+}
+
+.body .main {
+    display: grid;
+    width: 100%;
+    place-items: center;
+}
+
+.main .perm {
+    width: 40%;
+    aspect-ratio: 3/4;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    background-color: rgb(31, 31, 31);
+}
+
+.main .perm img {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+    transition: .5s ease-in-out;
+}
+
+.main .perm:hover img {
+    transform: translate(10%, -80%) scale(1);
+}
+
+.main .perm h1 {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 0); 
+    white-space: nowrap;
+    margin: 10px 0;
+    background: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.main .perm:hover h1{
+    word-wrap: break-word;
+    left: 30%
+}
+
+.main .perm p {
+    position: absolute;
+    box-sizing: border-box;
+    width: 80%;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    padding: 10px;
+    background: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.main .perm:hover p {
+    bottom: 5%;
+    left: -20%;
+    transform: translate(-10%, 10%);
+    background-color: var(--accent-color);
+}
+
+.main .perm button {
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    margin: 10px 0;
+    background: none;
+    border: var(--accent-color) 2px solid;
+    color: #fff;
+    padding: 10px 20px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 4px;
+}
+
+.main .perm:hover button{
+    position: absolute;
+    right: 0%;
+    transform: translate(-10%, 0);
+}
+
+@media screen and (max-width: 1024px) {
+
+    .body{
+        row-gap: 50px;
+    }
+
+    .main .perm {
+        width: 60%;
+    }
+
+    .main .perm img{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .body {
+        grid-template-columns: 1fr;
+        row-gap: 100px;
+    }
+
+    .main .perm {
+        max-width: 300px;
+        width: 80%;
+    }
+    
+    .main .perm img{
+        width: 70%;
+    }
+    .main .perm p{
+        width: 90%;
+        font-size: 12px;
+    }
+    .main .perm:hover p{
+        width: 60%;
+        transform: translate(10%, 10%);
+    }
+}

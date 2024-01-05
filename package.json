@@ -10,7 +10,7 @@
     "aos": "^3.0.0-beta.6",
     "dotenv": "^16.3.1",
     "emailjs": "^4.0.2",
-    "firebase": "^10.1.0",
+    "firebase": "^10.7.1",
     "framer-motion": "^10.13.0",
     "gltfjsx": "^6.2.13",
     "instafeed.js": "^2.0.0",
