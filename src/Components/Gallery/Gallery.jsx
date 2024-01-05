@@ -41,16 +41,18 @@ const Gallery = () => {
     return (
         <div>
             <div className={classes.slider}>
-                <div className={classes.innerSlider}>
-                    <div className={classes.divContainer}>
+                {/* <div className={classes.innerSlider}> */}
+                    {/* <div className={classes.divContainer}> */}
                         <div className={classes.slide}>
-                            <img src={img2} alt='Slider' />
-                            <h2>
+                            <img src={img11} alt='Slider' />
+                            <h2 style={{color: "#fff"}}>
                                 Tenetur repudiandae, quaerat corrupti delectus eum vitae dignissimos quidem voluptatum dolorem porro molestiae nobis architecto fugit autem, cum consequuntur alias maiores dicta!
                             </h2>
                         </div>
-                    </div>
-                </div>
+                    {/* </div> */}
+                {/* </div> */}
+                <button className={`${classes.navBtns} ${classes.prev}`}>Prev</button>
+                <button className={`${classes.navBtns} ${classes.next}`}>Next</button>
             </div>
             <div className={classes.container}>
                 <div className={classes.component}>
