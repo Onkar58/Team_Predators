@@ -106,7 +106,7 @@ const Home = () => {
           <p className={classes.p}>What we do</p>
           <h2 className={classes.h2}>We believe, we create</h2>
           <p className={classes.details}>Team Predators Racing competes in BAJA  i.e. a collegiate design competition held by SAE which challenges engineering students to build off-road vehicles capable of withstanding rugged terrain. We participate in BAJA SAEINDIA and BAJA SAE International to fuel our passion for creating an All-Terrain Vehicle which has the capability to Win.</p>
-          <Link to={'./moments'} style={{ textDecoration: "none" }}><button className={classes.btn}>View More</button></Link>
+          <Link to={'./moments'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btn}>View More</button></Link>
         </div>
       </div>
 

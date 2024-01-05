@@ -4,7 +4,6 @@ import {
   Contact,
   Partners,
   Achievements,
-  IndividualP,
   Teams,
   Moments,
   GalleryPage
@@ -24,7 +23,6 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/partners' element={<Partners />} />
         <Route path='/teams' element={<Teams/>} />
-        <Route path='/partners/:id' element={<IndividualP/>} />
         <Route path='/partners/criteria' element={<PartnerCrit/>} />
         <Route path='/gallery' element={<GalleryPage/>} />
       </Routes>
