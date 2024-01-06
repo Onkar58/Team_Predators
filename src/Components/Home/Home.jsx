@@ -154,7 +154,7 @@ const Home = () => {
         <h1 className={classes.hh1}>Who We Are</h1>
         <div className={classes.contact}>
             <p className={classes.cp}>We unite under a shared racing spirit and dedication to collaboratively create a well engineered vehicle with fine-tuning for peak performance and aim to secure a top rank in the Baja SAE competition. We are a group of highly passionate, hardworking and enthusiastic students who found their interest in off-roading and rose towards becoming a predator.</p>
-            <Link to={'./contact'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>Contact Us</button></Link>
+            <Link to={'./moments'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>Contact Us</button></Link>
         </div>
         </div>
         <div className={classes.getpart2}>

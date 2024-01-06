@@ -10,6 +10,8 @@ import { GetAllSponsors } from '../getdata/GetAllSponsors'
 
 const PartnerPage = () => {
     const [data, setData] = useState(null)
+    const [limit, setLimit] = useState(10)
+    const [ma,setmax] = useState(0)
     const navigate = useNavigate();
     const goto = () => {
         navigate("/partners/criteria")
@@ -18,7 +20,10 @@ const PartnerPage = () => {
     async function fetchData() {
         try {
             const Data = await GetAllSponsors();
-            console.log(Data)
+            setmax(Data[0].all.length)
+            if(limit > Data[0].all.length){
+                setLimit(Data[0].all.length)
+            }
             setData(Data[0].all)
 
         } catch (error) {
@@ -33,11 +38,31 @@ const PartnerPage = () => {
 
     const handleLoadMore = () => {
     // Fetch the next set of sponsors
-    fetchData();
+    if((limit + 10) <= ma){
+        setLimit(limit+10)
+    }
+    else{
+        setLimit(ma)
+    }
   };
 
   const handleButtonClick = () => {
     window.open('https://payu.in/web/571A1E990A26D3E250365EFC3B15B923', '_blank');
+  };
+
+  const handleEmailClick = () => {
+    // Replace 'recipient@example.com' with the actual email address
+    const emailAddress = 'someone@yoursite.com';
+
+    // You can also include additional parameters like subject and body
+    const subject = 'Subject of the email';
+    const body = 'Body of the email';
+
+    // Construct the mailto link
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open the default email client with the pre-filled email
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -52,7 +77,7 @@ const PartnerPage = () => {
                 <div className={classes.lmara}>
                     <h2 className={classes.c1}>Be a Part of Our Journey!</h2>
                     <p className={classes.p}>'<span style={{color:"#0c7808"}}>Team Predators Racing</span>’ is a non-profit student organization where the growing engineers learn soft skills along with technical skills. With Baja as a platform for industrial exposure, we have established various acquaintances along the way. Be it technical guidance, production help, financial aid or logistics, our sponsors have always had our backs and we are really grateful for the same. Their contributions made it possible for us to operate, build and thus win. To connect with us, approach our sales team</p>
-                    <button className={classes.bt}>Sales Team</button>
+                    <button className={classes.bt} onClick={handleEmailClick}>Sales Team</button>
                 </div>
             </div>
 
@@ -76,12 +101,12 @@ const PartnerPage = () => {
             <div className={classes.imp}>
                 {
                     (data === null)?<></>
-                    :data.map((item, index) => {
+                    :data.slice(0,limit).map((item, index) => {
                         return <Link to={`${item.link}`} className={classes.abs} style={{border:`3px solid ${item.color} `}} ><img src={item.logo} alt='' className={classes.ii}/></Link>
                     })
                 }
             </div>
-            {/* {lastVisible && <button onClick={handleLoadMore}>Load More</button>} */}
+            {(limit === ma)?<></>:<button className={classes.bt} onClick={handleLoadMore}>Load More</button>}
             </div>
         </div>
     </div>

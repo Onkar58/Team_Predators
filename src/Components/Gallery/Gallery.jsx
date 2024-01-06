@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { GetMoments } from '../getdata/GetMoments'
 import GalleryComponent from '../common/GalleryComponent/GalleryComponent'
 import img1 from '../../Assets/TrialImages/1.jpg'
 import img2 from '../../Assets/TrialImages/2.jpeg'
@@ -37,7 +38,24 @@ const image_links = [
     img14,
 ]
 
+
 const Gallery = () => {
+    const [data,setData] = useState(null)
+    async function fetchData() {
+        try {
+            const Data = await GetMoments();
+            setData(Data)
+
+        } catch (error) {
+            console.log("error occured while fetching data",error);
+            
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <div>
             <div className={classes.slider}>
@@ -57,11 +75,11 @@ const Gallery = () => {
             <div className={classes.container}>
                 <div className={classes.component}>
                     <h1>Moments</h1>
-                    <GalleryComponent imgArray={image_links} />
+                    {(data != null)?<GalleryComponent imgArray={data[0].moments} />:<></>}
                 </div>
                 <div className={classes.component}>
                     <h1>Women in BAJA</h1>
-                    <GalleryComponent imgArray={image_links} />
+                    {(data != null)?<GalleryComponent imgArray={data[1].women_in_baja} />:<></>}
                 </div>
             </div>
         </div>
