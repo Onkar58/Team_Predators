@@ -1,0 +1,163 @@
+.main{
+    margin: 0 auto;
+    width: calc(100%-100px);
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: fit-content;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: fit-content;
+    height: 100%;
+    /* border: #6204EF 2px solid; */
+}
+
+.details h1{
+    color: #fff;
+}
+
+.overview{
+    /* margin-top: 50px; */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.overview .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.box h2{
+    color: var(--primary-color);
+    font-size: 30px;
+}
+
+.box h3{
+    color: #fff;
+    font-weight: 300;
+}
+.img{
+    flex: 1;
+    height: 50vh;
+    width: fit-content;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img img{
+    height: 100%;
+    border-radius: 20px;
+}
+
+.achievements{
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    justify-self: flex-start;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    width: max-content;
+}
+
+.see{
+    font-size: 22px;
+    font-weight: bolder;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-bottom: 30px;
+    color: var(--green);
+}
+
+.achievement{
+    position: relative;
+    /* border: #6204EF 2px solid; */
+    margin: 5px 0;
+}
+
+.achievement::before{
+    content: "";
+    position: absolute;
+    /* top: 0; */
+    left: -10px;
+    height: 30px;
+    width: 2px;
+    /* margin-right: 100px; */
+    background-color: var(--green); 
+}
+
+.achievement p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .main{
+        flex-direction: column;
+        height: fit-content;
+        padding: 0px;
+        width: 100%;
+        /* border: #6204EF 2px solid; */
+        /* display: none; */
+    }
+
+    .main .img {
+        width: 90%;
+        height: auto;
+    }
+    .img img{
+        width: 100%;
+        height: auto;
+    }
+
+    .achievements{
+        width: 100%;
+
+    }
+
+    .out{
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .main{
+        align-items: center;
+        justify-content: center;
+    }
+    .achievements{
+        flex-direction: column;
+        width: 65%;
+        align-items: flex-start;
+        
+    }
+
+    .out{
+        width: 100%;
+    }
+
+    .overview{
+        width: 100%;
+        gap: 25px;
+    }
+}

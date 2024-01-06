@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --yellow: #FFBA00;
+    --primary-color: #0c7808;
+    --background-color: #000;
+    --accent-color: #0c7808;
+    --green: #0c7808;
+    --box-color: #333847;
+    --new-color: #0c7808;
+    --light-green: rgba(23,227,31,1);
+}
+
+html::-webkit-scrollbar {
+    width: 20px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #231e20;
+    /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(#231e20, var(--accent-color) #231e20);
+    border-radius: 10px;
+}
+
+
+.material-symbols-outlined {
+    padding-right: 30px;
+    font-size: 30px;
+    color: white;
+}
+
+.l1{
+    background: none;
+    padding: 0px;
+    padding-left: 8px;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    background: none;
+    color: var(--green);
+}
+
+

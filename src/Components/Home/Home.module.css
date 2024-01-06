@@ -1,0 +1,411 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.body {
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.D3model {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* background: transparent; */
+}
+
+.carDiv {
+    /* border: 2px solid red; */
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 80vh;
+}
+
+.scrollDiv {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 20px;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    /* margin-bottom: 300px; */
+    height: fit-content;
+}
+
+.scrollDiv section {
+    background: #111;
+    padding: 20px;
+    /* height: max-content; */
+}
+
+.scrollDiv section h1 {
+    background: none;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.scrollDiv section p {
+    background: none;
+    opacity: .5;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+
+
+.part2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--box-color);
+    margin-bottom: 40px;
+}
+
+.im {
+    width: 50%;
+    padding-bottom: 60px;
+    background: none;
+}
+
+.img1,
+.img2 {
+    width: 350px;
+    height: 250px;
+    background: none;
+}
+
+.img1 {
+    margin-top: 130px;
+    transform: rotate(6.102deg);
+    float: right;
+    margin-right: 80px;
+}
+
+.img2 {
+    transform: rotate(-11.297deg);
+    margin-top: -80px;
+    margin-left: 80px;
+}
+
+.do {
+    width: 50%;
+    padding: 40px;
+    background: none;
+}
+
+.p {
+    color: var(--new-color);
+    font-size: 25px;
+    margin-bottom: -20px;
+    background: none;
+}
+
+.h2 {
+    color: white;
+    padding: 30px 0px;
+    font-size: 50px;
+    background: none;
+}
+
+.details {
+    color: white;
+    font-size: 20px;
+    background: none;
+}
+
+.btn {
+    padding: 10px 30px;
+    margin-top: 100px;
+    background: none;
+    color: white;
+    border: 3px solid var(--green);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: black;
+}
+
+/* slider */
+.part3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slider {
+    display: flex;
+    overflow-x: hidden;
+    transform: translateX(-180px);
+    width: calc(100% + 180px);
+}
+
+.try {
+    width: 600px;
+    height: 300px;
+    margin: 0px 20px;
+}
+
+.lbtn,
+.rbtn {
+    position: absolute;
+    background-color: black;
+    margin-top: -170px;
+    padding: 10px;
+    opacity: 0.8;
+    left: 410px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rbtn {
+    left: auto;
+    right: 360px;
+}
+
+.rbtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.lbtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.part4 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hh {
+    color: var(--new-color);
+    font-size: 50px;
+}
+
+.part5 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.r {
+    width: 100%;
+    display: flex;
+    background-color: var(--box-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner {
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    background: none;
+    /* border: 2px aqua solid; */
+}
+
+.partner .container {
+    background: none;
+    flex-shrink: 0;
+    /* border: 2px solid green; */
+    width: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+    
+}
+
+.hh1 {
+    color: var(--light-green);
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.partr {
+    /* background-color: var(--box-color); */
+    background: none;
+    padding: 40px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.ab {
+    padding: 15px 30px;
+    font-size: 17px;
+    font-weight: bolder;
+    border-radius: 4px;
+    color: white;
+    background-color: var(--green);
+    border: none;
+    margin-bottom: 40px;
+}
+
+.part6 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.getpart1, .getpart2{
+    width: 45%;
+    padding: 50px;
+
+}
+
+.getpart1{
+    text-align: right;
+}
+
+.getpart2{
+    text-align: left;
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cp {
+    color: white;
+    font-size: 20px;
+}
+
+@media (max-width: 850px) {
+    .D3model {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .carDiv {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .scrollDiv {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .part2 {
+        flex-wrap: wrap;
+    }
+
+    .do {
+        width: 100%;
+    }
+
+    .cp {
+        font-size: 40px;
+    }
+
+    .ccc {
+        margin-left: -40px;
+    }
+
+    .btn {
+        margin-top: 70px;
+    }
+
+    .part6 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    .scrollDiv {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .im {
+        transform: scale(0.6);
+        margin-bottom: -100px;
+    }
+
+    .img1 {
+        margin-top: 40px;
+        margin-right: -150px;
+    }
+
+    .img2 {
+        margin-left: -160px;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .h2 {
+        font-size: 30px;
+    }
+
+    .hh,
+    .hh1 {
+        font-size: 35px;
+        text-align: center;
+        padding: 0px 20px;
+    }
+
+    .contact {
+        font-size: 40px;
+    }
+
+    .ccc {
+        margin: 0px;
+        width: 100%;
+
+    }
+
+    .cd {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cp {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .ab {
+        font-size: 13px;
+        padding: 10px 20px;
+        font-weight: 500;
+    }
+
+}

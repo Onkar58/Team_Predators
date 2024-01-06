@@ -1,0 +1,141 @@
+.body{
+    padding-top: 10px;
+    margin: 20px 0px;
+    background-color: var(--box-color);
+    width: 378px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.abc{
+    display: none;
+}
+
+.img{
+    width: 359px;
+    border-radius: 11px 11px 0px 0px;
+    cursor: pointer;
+}
+
+.p{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    width: 340px;
+    background: none;
+    min-height: 50px;
+
+}
+
+.link{
+    margin: 0px;
+    padding: 0px;
+    background: none;
+}
+
+.inner{
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 20px;
+}
+
+.logo{
+    height: 45px;
+    width: 45px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.info{
+    background: none;
+}
+
+.a1, .a11{
+    background: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: -60px;
+    cursor:pointer;
+}
+
+.a11{
+    padding-top: 4px;
+    font-size: 13px;
+    font-weight: 300px;
+    cursor:default;
+}
+
+.a{
+    width: 45px;
+    height: 45px;
+    background: none;
+    cursor: pointer;
+}
+
+.second{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.main{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background: none;
+    margin-bottom: 70px;
+}
+
+.first, .third{
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+/* responsive */
+@media (max-width: 850px){
+    .body{
+        width: 350px;
+        margin: 20px;
+    }
+
+    .img{
+        width: 320px;
+    }
+
+    .main{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .third{
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    } 
+
+    .a1, .a11{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px){
+    .body{
+        transform: scale(0.9);
+    }
+}

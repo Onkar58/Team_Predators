@@ -1,8 +1,9 @@
 import React from 'react'
+import PartnerPage from '../Components/Partners/PartnerPage'
 
 const Partners = () => {
   return (
-    <div>Partners</div>
+    <PartnerPage/>
   )
 }
 

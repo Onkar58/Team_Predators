@@ -1,9 +1,10 @@
 import React from 'react'
+import Achievements from '../Components/Achievements/Achievements'
 
 const Achivements = () => {
   return (
-    <div>Achivements</div>
+    <Achievements />
   )
 }
 
-export default Achivements
+export default Achivements;

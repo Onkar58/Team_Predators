@@ -1,0 +1,121 @@
+.main{
+    width: 100%;
+    /* border: red 2px solid; */
+    /* padding: 50px; */
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* gap: 50px; */
+}
+
+.slider{
+    width: 80%;
+    height: 200px;
+    overflow-x: scroll;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    top: 70px;
+    transition: .5s ease-in-out;
+}
+
+.dummy{
+    width: 100%;
+    height: 200px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    top: 70px;
+    transition: .5s ease-in-out;
+    position: relative;
+}
+
+.btn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ffffff17;
+    z-index: 5;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+.btn1{
+    left: 5%;
+}
+.btn2{
+    right: 5%;
+}
+.btn svg{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    background: transparent;
+    transition: .3s ease-in-out;    
+}
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+.element{
+    height: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    /* border: #fff 2px solid; */
+    
+}
+
+.element .name{
+    /* overflow: visible; */
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    background: none;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.slider img{
+    transition: .3s ease-in-out;
+    height: 100%;
+    opacity: 30%;
+    /* aspect-ratio: 1/1; */
+    border-radius: 4px;
+}
+
+.slider img.active, .slider .element img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 100%;
+    /* box-shadow: 0 0 20px #6204EF; */
+}
+
+
+
+@media (max-width: 768px) {
+    .main{
+        padding-top: 0px;
+    }
+    .slider{
+        width: 100%;
+        padding: 10px;
+    }
+}
