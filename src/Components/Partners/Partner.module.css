@@ -7,10 +7,10 @@
     overflow-x: hidden;
 }
 .head{
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     text-align: center;
-    color: var(--green);
+    color: var(--light-green);
     font-size: 50px;
 }
 
@@ -70,6 +70,8 @@
     border-radius: 4px;
     margin-top: 40px;
     font-size: 15px;
+    border: none;
+    cursor: pointer;
 }
 
 .img{
@@ -110,7 +112,7 @@
 
 .imp{
     margin-top: 40px;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,17 +122,28 @@
 .next{
     width: 100%;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .abs{
-    margin: 40px 80px;
+    margin: 40px;
     border-radius: 4px;
 }
 
 .ii{
     width: 130px;
+    height: 130px;
+    object-fit: contain;
     border-radius: 4px;
-    padding: 25px 10px;
+    padding: 10px;
+    background: none;
+    border: 3px solid var(--green);
+}
+
+.ii:hover{
+    background-color: rgba(81, 80, 80, 0.456);
 }
 
 
@@ -239,6 +252,10 @@
     .main_img{
         margin-top: -80px;
         margin-bottom: 20px;
+    }
+
+    .imp{
+        width: 100%;
     }
 }
 

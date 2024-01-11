@@ -1,6 +1,11 @@
-.component {
-  margin-top: 10px;
-  background: none;
+.container{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.component{
+    margin-top: 10px;
+    background: none;
 }
 .component h1 {
   margin-top: 50px;
