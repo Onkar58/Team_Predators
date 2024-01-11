@@ -11,12 +11,12 @@
 
 :root {
     --yellow: #FFBA00;
-    --primary-color: #0c7808;
+    --primary-color: #0FB600;
     --background-color: #000;
-    --accent-color: #0c7808;
-    --green: #0c7808;
+    --accent-color: #0FB600;
+    --green: #0FB600;
     --box-color: #333847;
-    --new-color: #0c7808;
+    --new-color: #0FB600;
     --light-green: rgba(23,227,31,1);
 }
 
