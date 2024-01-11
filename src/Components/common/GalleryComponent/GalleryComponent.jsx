@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './GalleryComponent.module.css'
 
 const GalleryComponent = ({imgArray}) => {
-    console.log(imgArray);
     return (
         <div className={classes.main}>
             {
