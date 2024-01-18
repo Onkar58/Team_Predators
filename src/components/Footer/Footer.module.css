@@ -73,7 +73,7 @@
 }
 
 .h{
-    color: #137210;
+    color: var(--primary-color);
     font-weight: bolder;
 }
 

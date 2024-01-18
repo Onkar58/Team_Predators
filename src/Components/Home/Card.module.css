@@ -380,12 +380,18 @@
     padding: 10px 20px;
     transition: all 0.5s ease-in-out;
     border-radius: 4px;
+    cursor: pointer;
 }
+
 
 .main .perm:hover button{
     position: absolute;
     right: 0%;
     transform: translate(-10%, 0);
+}
+
+.main .perm button:hover{
+    background-color: var(--accent-color);
 }
 
 @media screen and (max-width: 1024px) {

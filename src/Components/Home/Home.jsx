@@ -23,7 +23,6 @@ const Home = () => {
     // images for slider
     const data = GetHomeSlider();
     setSlide(data);
-    setPartnerInfo(partners);
   }, [])
 
   useEffect(() => {
@@ -46,6 +45,21 @@ const Home = () => {
       }
     })
   }, [])
+
+  async function fetchData() {
+    try {
+        const Data = await GetAllSponsors();
+        setPartnerInfo(Data[1].recent)
+
+    } catch (error) {
+        console.log("error occured while fetching data",error);
+        
+    }
+}
+
+useEffect(() => {
+    fetchData();
+}, []);
 
 
   return (
@@ -94,21 +108,23 @@ const Home = () => {
         </div>
       </div>
       <div className={classes.checking}>
-      {/* <GotoCard/> */}
+        <GotoCard />
       </div>
-      {/* what we do */}
+      <div className={classes.big}>
+        {/* what we do */}
       <div className={classes.part2}>
         <div className={classes.im}>
           <img src={img1} className={classes.img1} alt='' />
           <img src={img2} className={classes.img2} alt='' />
         </div>
         <div className={classes.do}>
-          <p className={classes.p}>What we do</p>
-          <h2 className={classes.h2}>We believe, we create</h2>
+          <p className={classes.p}>We believe, we create</p>
+          <h2 className={classes.h2}>What We Do</h2>
           <p className={classes.details}>Team Predators Racing competes in BAJA  i.e. a collegiate design competition held by SAE which challenges engineering students to build off-road vehicles capable of withstanding rugged terrain. We participate in BAJA SAEINDIA and BAJA SAE International to fuel our passion for creating an All-Terrain Vehicle which has the capability to Win.</p>
           <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btn}>View More</button></Link>
         </div>
       </div>
+      
 
       {/* achievement slider */}
       <div className={classes.part3}>
@@ -119,7 +135,7 @@ const Home = () => {
       {/* media gallery */}
       <div className={classes.part4}>
         <h1 className={classes.hh1}>MEDIA GALLERY</h1>
-        {/* <SocialMedia /> */}
+        <SocialMedia />
       </div>
 
       {/* recent partners */}
@@ -130,17 +146,17 @@ const Home = () => {
             <div className={classes.container}>
               {
                 partnerInfo?.map((e, i) => {
-                  return <img key={i} src={e.ima} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
+                  return <img key={i} src={e.logo} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
                 })
               }
             </div>
-            <div className={classes.container}>
+            {/* <div className={classes.container}>
               {
                 partnerInfo?.map((e, i) => {
                   return <img key={i} src={e.ima} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
                 })
               }
-            </div>
+            </div> */}
           </div>
           <button className={classes.ab}>Become Partner</button>
 
@@ -167,6 +183,7 @@ const Home = () => {
       </div>
 
 
+    </div>
     </div>
   )
 }
