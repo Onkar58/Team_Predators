@@ -22,6 +22,12 @@ const InfoBox = ({ details }) => {
         <div className={classes.main}>
             <div className={classes.img}>
                 <img src={achievementData.img} alt='Raptor' />
+                <button className={classes.btn} onClick={() => window.open("https://google.com", "_blank")}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill='' width="48" height="48" id="play">
+                        <path fill="none" d="M0 0h48v48H0z"></path>
+                        <path d="m20 33 12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"></path>
+                    </svg>
+                </button>
             </div>
             <div className={classes.details}>
                 <h1>{achievementData.name}</h1>

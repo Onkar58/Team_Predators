@@ -5,12 +5,13 @@ import img2 from '../../Assets/raptor5d.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { GetHomeSlider } from '../getdata/GetHomeSlider'
 import SocialMedia from '../Social/SocialMedia'
-import { GetRecentPartner } from '../getdata/GetRecentPartner'
 import img from '../../Assets/cont.png'
 import Carousel from '../common/Carousel/Carousel'
 import CarModel from '../common/Model/CarModel'
 import partners from '../Partners/PertnerInfo'
+import { GetAllSponsors } from '../getdata/GetAllSponsors'
 import GotoCard from './GotoCard'
+import women from '../../Assets/women.jpg'
 
 
 const Home = () => {
@@ -22,7 +23,6 @@ const Home = () => {
     // images for slider
     const data = GetHomeSlider();
     setSlide(data);
-    setPartnerInfo(partners);
   }, [])
 
   useEffect(() => {
@@ -46,12 +46,27 @@ const Home = () => {
     })
   }, [])
 
+  async function fetchData() {
+    try {
+        const Data = await GetAllSponsors();
+        setPartnerInfo(Data[1].recent)
+
+    } catch (error) {
+        console.log("error occured while fetching data",error);
+        
+    }
+}
+
+useEffect(() => {
+    fetchData();
+}, []);
+
 
   return (
     <div className={classes.body}>
       <div className={classes.D3model}>
         <div className={classes.carDiv}>
-          <CarModel />
+          {/* <CarModel /> */}
         </div>
         <div className={classes.scrollOverlay} id="scrollO" >
           {/* <div className={classes.scrollDiv}>
@@ -93,53 +108,55 @@ const Home = () => {
         </div>
       </div>
       <div className={classes.checking}>
-      <GotoCard/>
+        <GotoCard />
       </div>
-      {/* what we do */}
+      <div className={classes.big}>
+        {/* what we do */}
       <div className={classes.part2}>
         <div className={classes.im}>
           <img src={img1} className={classes.img1} alt='' />
           <img src={img2} className={classes.img2} alt='' />
         </div>
         <div className={classes.do}>
-          <p className={classes.p}>What we do</p>
-          <h2 className={classes.h2}>We believe, we create</h2>
+          <p className={classes.p}>We believe, we create</p>
+          <h2 className={classes.h2}>What We Do</h2>
           <p className={classes.details}>Team Predators Racing competes in BAJA  i.e. a collegiate design competition held by SAE which challenges engineering students to build off-road vehicles capable of withstanding rugged terrain. We participate in BAJA SAEINDIA and BAJA SAE International to fuel our passion for creating an All-Terrain Vehicle which has the capability to Win.</p>
-          <Link to={'./moments'} style={{ textDecoration: "none" }}><button className={classes.btn}>View More</button></Link>
+          <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btn}>View More</button></Link>
         </div>
       </div>
+      
 
       {/* achievement slider */}
       <div className={classes.part3}>
-        <h1 className={classes.hh1}>ACHIEVEMENTS</h1>
-        <Carousel />
+        <h1 className={classes.hh}>ACHIEVEMENTS</h1>
+        {/* <Carousel /> */}
       </div>
 
       {/* media gallery */}
       <div className={classes.part4}>
-        <h1 className={classes.hh}>MEDIA GALLERY</h1>
-        {/* <SocialMedia /> */}
+        <h1 className={classes.hh1}>MEDIA GALLERY</h1>
+        <SocialMedia />
       </div>
 
       {/* recent partners */}
       <div className={classes.part5}>
-        <h1 className={classes.hh1}>Partners</h1>
+        <h1 className={classes.hh}>Partners</h1>
         <div className={classes.r}>
           <div className={classes.partner}>
             <div className={classes.container}>
               {
                 partnerInfo?.map((e, i) => {
-                  return <img key={i} src={e.ima} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
+                  return <img key={i} src={e.logo} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
                 })
               }
             </div>
-            <div className={classes.container}>
+            {/* <div className={classes.container}>
               {
                 partnerInfo?.map((e, i) => {
                   return <img key={i} src={e.ima} className={classes.partr} onClick={() => window.open(`${e.link}`, '_blank')} alt='' />
                 })
               }
-            </div>
+            </div> */}
           </div>
           <button className={classes.ab}>Become Partner</button>
 
@@ -148,23 +165,25 @@ const Home = () => {
 
       {/* women in BAJA */}
       <div className={classes.part6}>
+      <img src={women} className={classes.women} alt=''/>
         <div className={classes.getpart1}>
-        <h1 className={classes.hh}>Who We Are</h1>
+        <h1 className={classes.hh1}>Who We Are</h1>
         <div className={classes.contact}>
             <p className={classes.cp}>We unite under a shared racing spirit and dedication to collaboratively create a well engineered vehicle with fine-tuning for peak performance and aim to secure a top rank in the Baja SAE competition. We are a group of highly passionate, hardworking and enthusiastic students who found their interest in off-roading and rose towards becoming a predator.</p>
-            <Link to={'./contact'} style={{ textDecoration: "none" }}><button className={classes.btn}>Contact Us</button></Link>
+            <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>Contact Us</button></Link>
         </div>
         </div>
         <div className={classes.getpart2}>
-        <h1 className={classes.hh}>Women in BAJA</h1>
+        <h1 className={classes.hh1}>Women in BAJA</h1>
         <div className={classes.contact}>
             <p className={classes.cp}>Women Empowerment is about changing the way women are perceived in society. The women of BAJA, have been breaking boundaries and are setting the bar high in terms of contribution and technical expertise in motorsports. They have contributed to female representation in every single aspect!</p>
-            <Link to={'./contact'} style={{ textDecoration: "none" }}><button className={classes.btn}>View More</button></Link>
+            <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>View More</button></Link>
           </div>
         </div>
       </div>
 
 
+    </div>
     </div>
   )
 }
