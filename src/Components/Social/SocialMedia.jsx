@@ -102,7 +102,6 @@ const SocialMedia = () => {
         </div>
         <div className={classes.third}>
           {
-
             dataC.map((e) => {
               return <Component img={e[0]} link={e[2]} desc={e[1]} time={e[3]} />
             })
