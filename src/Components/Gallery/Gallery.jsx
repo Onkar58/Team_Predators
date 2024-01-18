@@ -98,7 +98,7 @@ const Gallery = () => {
                     {video_items.map((item, key) => {
                         return (
                             <SwiperSlide key={key}>
-                                <div className={classes.container}>
+                                <div className={classes.slide}>
                                     <div className={classes.info}>
                                         <h1>{item.heading}</h1>
                                         <p>{item.para}</p>
@@ -115,11 +115,11 @@ const Gallery = () => {
             <div className={classes.container}>
                 <div className={classes.component}>
                     <h1>Moments</h1>
-                    {(data != null)?<GalleryComponent imgArray={data[0].moments} />:<></>}
+                    {(data != null)?<GalleryComponent imgArray={data[0]?.moments} />:<></>}
                 </div>
                 <div className={classes.component}>
                     <h1>Women in BAJA</h1>
-                    {(data != null)?<GalleryComponent imgArray={data[1].women_in_baja} />:<></>}
+                    {(data != null)?<GalleryComponent imgArray={data[1]?.women_in_baja} />:<></>}
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@ const Home = () => {
     <div className={classes.body}>
       <div className={classes.D3model}>
         <div className={classes.carDiv}>
-          <CarModel />
+          {/* <CarModel /> */}
         </div>
         <div className={classes.scrollOverlay} id="scrollO" >
           {/* <div className={classes.scrollDiv}>
@@ -94,7 +94,7 @@ const Home = () => {
         </div>
       </div>
       <div className={classes.checking}>
-      <GotoCard/>
+      {/* <GotoCard/> */}
       </div>
       {/* what we do */}
       <div className={classes.part2}>
@@ -106,14 +106,14 @@ const Home = () => {
           <p className={classes.p}>What we do</p>
           <h2 className={classes.h2}>We believe, we create</h2>
           <p className={classes.details}>Team Predators Racing competes in BAJA  i.e. a collegiate design competition held by SAE which challenges engineering students to build off-road vehicles capable of withstanding rugged terrain. We participate in BAJA SAEINDIA and BAJA SAE International to fuel our passion for creating an All-Terrain Vehicle which has the capability to Win.</p>
-          <Link to={'./moments'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btn}>View More</button></Link>
+          <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btn}>View More</button></Link>
         </div>
       </div>
 
       {/* achievement slider */}
       <div className={classes.part3}>
         <h1 className={classes.hh}>ACHIEVEMENTS</h1>
-        <Carousel />
+        {/* <Carousel /> */}
       </div>
 
       {/* media gallery */}
@@ -154,14 +154,14 @@ const Home = () => {
         <h1 className={classes.hh1}>Who We Are</h1>
         <div className={classes.contact}>
             <p className={classes.cp}>We unite under a shared racing spirit and dedication to collaboratively create a well engineered vehicle with fine-tuning for peak performance and aim to secure a top rank in the Baja SAE competition. We are a group of highly passionate, hardworking and enthusiastic students who found their interest in off-roading and rose towards becoming a predator.</p>
-            <Link to={'./moments'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>Contact Us</button></Link>
+            <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>Contact Us</button></Link>
         </div>
         </div>
         <div className={classes.getpart2}>
         <h1 className={classes.hh1}>Women in BAJA</h1>
         <div className={classes.contact}>
             <p className={classes.cp}>Women Empowerment is about changing the way women are perceived in society. The women of BAJA, have been breaking boundaries and are setting the bar high in terms of contribution and technical expertise in motorsports. They have contributed to female representation in every single aspect!</p>
-            <Link to={'./moments'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>View More</button></Link>
+            <Link to={'./gallery'} style={{ textDecoration: "none", background:"none" }}><button className={classes.btnk}>View More</button></Link>
           </div>
         </div>
       </div>

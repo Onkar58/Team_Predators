@@ -58,12 +58,63 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.img button{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    height: fit-content;
+    aspect-ratio: 1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.img button::after{
+    content: "";
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    translate: -95% -5%;
+    /* transform-origin: center; */
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    border: #fff 2px solid;
+
+    /* background: rgba(255, 255, 255, 0.352); */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    animation: pulse ease-in-out 1.5s infinite ;
+}
+@keyframes pulse {
+    0%{
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.4);
+        opacity: 0;
+    }
 
 }
 
 .img img{
     height: 100%;
     border-radius: 20px;
+}
+
+
+.img button svg{
+    /* height: 100%; */
+    /* width: 100%; */
+    background: transparent;
+    fill: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
 .achievements{
